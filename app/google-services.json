@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1030502705880",
+    "firebase_url": "https://mlpma-af90b.firebaseio.com",
+    "project_id": "mlpma-af90b",
+    "storage_bucket": "mlpma-af90b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030502705880:android:8288003b9ecd8825",
+        "android_client_info": {
+          "package_name": "com.subtledesigns.mlpma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030502705880-2br2ifvdp2nivmph3fupssp3c426u82b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.subtledesigns.mlpma",
+            "certificate_hash": "28940993922715d6be4c47bddc821562d1c01e29"
+          }
+        },
+        {
+          "client_id": "1030502705880-sdm8fbbhd3h8hc68ajrgukcc2h8h020c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB40m-De0yd2-SGkutuRFF_MXKL3ZzaHDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030502705880-sdm8fbbhd3h8hc68ajrgukcc2h8h020c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
