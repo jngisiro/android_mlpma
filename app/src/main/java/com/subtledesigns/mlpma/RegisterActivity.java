@@ -1,5 +1,6 @@
 package com.subtledesigns.mlpma;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Toast.makeText(getApplicationContext(), "User Registered Successfully",
                                         Toast.LENGTH_LONG);
+                                finish();
+                                startActivity(new Intent(getApplicationContext(), ProductsActivity.class));
                             }
                             else{
                                 Toast.makeText(getApplicationContext(), "User could not be created",
