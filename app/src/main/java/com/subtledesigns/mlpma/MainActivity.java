@@ -1,5 +1,6 @@
 package com.subtledesigns.mlpma;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,25 +27,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        mValueField = findViewById(R.id.txt_valueField);
-        mKeyField = findViewById(R.id.txt_keyField);
-        //FirebaseApp.initializeApp(this);
+    public void openRegister(View view){
+        Intent i = new Intent(this, RegisterActivity.class);
+        startActivity(i);
+    }
 
-        // Write a message to the database
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference rootRef = database.getReference("users");
-
-//        myRef.setValue("Hello, World!");
-
-       mAddData = findViewById(R.id.btn_addData);
-       mAddData.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String value = mValueField.getText().toString();
-               String key = mKeyField.getText().toString();
-               rootRef.child(key).setValue(value);
-           }
-       });
+    public void openLogin(View view){
+        startActivity(new Intent(this, LoginActivity.class));
     }
 }
