@@ -18,50 +18,43 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPassword;
     private FirebaseAuth auth;
-    // private String email;
-    private String password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mPassword = findViewById(R.id.txt_password);
-       // password = mPassword.getText().toString();
+        mPassword = findViewById(R.id.txt_registerPassword);
+        mEmail = findViewById(R.id.txt_registerEmail);
+
         auth = FirebaseAuth.getInstance();
-    }
-
-    private void addUser(View v){
-
     }
 
     public void createUser(View v){
 
-        Toast.makeText(getApplicationContext(), "Ruuning add user", Toast.LENGTH_LONG).show();
-        mEmail = findViewById(R.id.txt_email);
         String email = mEmail.getText().toString();
+        String password = mPassword.getText().toString();
 
-//        if(email.equals("") && password.equals("")){
-//            Toast.makeText(getApplicationContext(), "Please fill in email and password", Toast.LENGTH_LONG).show();
-//        }
+        if(email.equals("") && password.equals("")){
+            Toast.makeText(getApplicationContext(), "Please fill in email and password", Toast.LENGTH_LONG).show();
+        }
 
-//        else{
-//            String email = mEmail.getText().toString();
-//            String password = mPassword.getText().toString();
-//            auth.createUserWithEmailAndPassword(email, password)
-//                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<AuthResult> task) {
-//                            if(task.isSuccessful()){
-//                                Toast.makeText(getApplicationContext(), "User Registered Successfully",
-//                                        Toast.LENGTH_LONG);
-//                            }
-//                            else{
-//                                Toast.makeText(getApplicationContext(), "User could not be created",
-//                                        Toast.LENGTH_LONG);
-//                            }
-//                        }
-//                    });
-//        }
+        else{
+            auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(getApplicationContext(), "User Registered Successfully",
+                                        Toast.LENGTH_LONG);
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "User could not be created",
+                                        Toast.LENGTH_LONG);
+                            }
+                        }
+                    });
+        }
     }
 }
