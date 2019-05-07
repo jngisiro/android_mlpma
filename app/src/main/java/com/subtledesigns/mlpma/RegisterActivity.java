@@ -48,13 +48,13 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(getApplicationContext(), "User Registered Successfully",
-                                        Toast.LENGTH_LONG);
+                                        Toast.LENGTH_LONG).show();
                                 finish();
                                 startActivity(new Intent(getApplicationContext(), ProductsActivity.class));
                             }
                             else{
                                 Toast.makeText(getApplicationContext(), "User could not be created",
-                                        Toast.LENGTH_LONG);
+                                        Toast.LENGTH_LONG).show();
                             }
                         }
                     });

@@ -23,7 +23,7 @@
         tools:text="MLPMA" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txt_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -35,16 +35,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txt_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Enter Password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintEnd_toEndOf="@+id/txt_email"
+        app:layout_constraintStart_toStartOf="@+id/txt_email"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
     <Button
         android:id="@+id/btn_signIn"
@@ -52,17 +52,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="SIGN IN"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintEnd_toEndOf="@+id/txt_password"
+        app:layout_constraintStart_toStartOf="@+id/txt_password"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password"
+        android:onClick="loginUser"/>
 
-    <Button
-        android:id="@+id/btn_signUp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="SIGN UP"
-        app:layout_constraintEnd_toEndOf="@+id/btn_signIn"
-        app:layout_constraintStart_toStartOf="@+id/btn_signIn"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
+
 </android.support.constraint.ConstraintLayout>
