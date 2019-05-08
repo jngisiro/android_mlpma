@@ -1,4 +1,4 @@
-package com.subtledesigns.mlpma;
+package com.subtledesigns.mlpma.model;
 
 public class User {
     public String username, password;
