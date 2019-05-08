@@ -1,5 +1,6 @@
 package com.subtledesigns.mlpma;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -29,11 +30,13 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth auth;
     GoogleSignInClient mGoogleSignInClient;
     SignInButton signInButton;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        dialog = new ProgressDialog(this);
 
         mEmail = findViewById(R.id.txt_email);
         mPassword = findViewById(R.id.txt_password);
@@ -64,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
         }
         else{
+            dialog.setMessage("Logging in...");
+            dialog.show();
             auth.signInWithEmailAndPassword(mEmail.getText().toString(), mPassword.getText().toString())
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
